@@ -1,169 +1,80 @@
-# 🏪 Shivanya Kirana ERP System
+# Shivanya Kirana ERP System
 
-**एक complete, production-ready ERP system किराना दुकानों के लिए**
+## Overview
+A comprehensive ERP system for managing kirana stores with features for billing, inventory, accounting, and reporting.
 
-## ✨ Features
-
-### 🔐 Security & Access Control
-- Admin & Staff Login
-- Password Management
-- User Roles & Permissions
-- Login History Tracking
-
-### 🏠 Dashboard
-- Real-time Sales Analytics
-- Daily Profit Calculation
-- Payment Collection (Cash/UPI/Card)
-- Inventory Alerts
-- Top Selling Products
-
-### 📦 Product Management
-- Unlimited Products
-- Barcode Support
-- Product Images
-- Category & Brand Management
-- GST Calculation
-- Expiry Date Tracking
-- Stock Management
-
-### 🧾 Billing (POS)
-- Fast Billing System
-- Barcode Scanner Support
-- Multiple Payment Methods
-- Bill Hold Feature
-- Thermal Printer (80mm)
-- WhatsApp Bill Sharing
-- Return Management
-
-### 📥 Purchase Management
-- Supplier Management
-- Purchase Invoices
-- Stock Auto-Update
-- Purchase Returns
-
-### 📦 Inventory
-- Live Stock Tracking
-- Stock Adjustments
-- Inter-store Transfers
-- Low Stock Alerts
-- Inventory Valuation
-
-### 👥 Customer Management
-- Customer Database
-- Purchase History
-- Due Amount Tracking
-- Loyalty Points System
-
-### 🏢 Supplier Management
-- Supplier Details
-- Payment History
-- Due Tracking
-
-### 📊 Reports
-- Daily/Monthly/Yearly Sales
-- Product-wise Analytics
-- Category-wise Reports
-- Profit & Loss Statements
-- GST Reports
-- Customer Analytics
-
-### 💰 Accounting
-- Daily Expenses
-- Income Tracking
-- Cash Book
-- P&L Analysis
-
-### 🤖 AI Features
-- Customer Purchase Prediction
-- Repeat Purchase Reminders
-- Low Stock Forecasting
-- Auto Reorder Suggestions
-- Demand Forecasting
-- Smart Product Suggestions
-
-### 📱 Mobile & Cloud
-- Mobile-Friendly Interface
-- Offline Mode Support
-- Online Sync
-- Auto Backup
-- Import/Export (Excel, PDF)
-
-### 🖨️ Hardware Support
-- Barcode Scanner Integration
-- Thermal Printer Support
-- Network Printer Support
-
-## 🛠️ Tech Stack
-
-- **Frontend**: React.js + Tailwind CSS
+## Tech Stack
 - **Backend**: Node.js + Express.js
-- **Database**: PostgreSQL + Redis
-- **Mobile**: React Native / PWA
-- **AI/ML**: Python FastAPI
-- **Deployment**: Docker + Cloud Ready
+- **Frontend**: React.js
+- **Database**: PostgreSQL
+- **Cache**: Redis
+- **Containerization**: Docker
 
-## 📁 Project Structure
+## Features
+- 🧾 Billing & Invoice Management
+- 📦 Inventory Management
+- 👥 Customer Management
+- 🏪 Supplier Management
+- 💰 Accounting & Profit/Loss Reports
+- 📊 Analytics & Dashboard
+- 🔐 Role-based Access Control
+- 📱 Responsive UI
 
-```
-Shivanya-Kirana-ERP/
-├── backend/              # Node.js + Express Backend
-├── frontend/             # React.js Frontend
-├── ai-service/           # Python AI/ML Service
-├── database/             # PostgreSQL Schema
-├── docs/                 # Documentation
-└── docker-compose.yml    # Docker Setup
-```
+## Installation
 
-## 🚀 Quick Start
-
-### Prerequisites
-- Node.js 16+
-- PostgreSQL 12+
-- Python 3.8+
-- Docker (optional)
-
-### Installation
-
-1. **Clone Repository**
+### Using Docker (Recommended)
 ```bash
-git clone https://github.com/praveenmadheshiyaofficial/Shivanya-Kirana-ERP.git
-cd Shivanya-Kirana-ERP
+docker-compose up -d
 ```
 
-2. **Backend Setup**
+### Manual Setup
+
+#### Backend
 ```bash
 cd backend
+npm install
+cp .env.example .env
+npm run dev
+```
+
+#### Frontend
+```bash
+cd frontend
 npm install
 cp .env.example .env
 npm start
 ```
 
-3. **Frontend Setup**
+#### Database
 ```bash
-cd frontend
-npm install
-npm start
+psql -U postgres -f database/schema.sql
 ```
 
-4. **AI Service Setup**
-```bash
-cd ai-service
-pip install -r requirements.txt
-python main.py
-```
+## API Endpoints
 
-## 👤 Default Credentials
+### Authentication
+- `POST /api/auth/login` - User login
+- `POST /api/auth/change-password` - Change password
 
-**Admin Account**
+### Products
+- `GET /api/products` - Get all products
+- `POST /api/products` - Create product
+- `PUT /api/products/:id` - Update product
+- `DELETE /api/products/:id` - Delete product
+
+### Billing
+- `POST /api/billing/create` - Create bill
+- `GET /api/billing/:id` - Get bill details
+- `POST /api/billing/hold/:id` - Hold bill
+
+### Reports
+- `GET /api/reports/sales/daily` - Daily sales
+- `GET /api/reports/sales/monthly` - Monthly sales
+- `GET /api/reports/profit` - Profit report
+
+## Default Credentials
 - Username: `admin`
 - Password: `admin123`
 
-⚠️ **Change credentials immediately after first login!**
-
-## 📄 License
-
-MIT License
-
----
-
-**Made with ❤️ for Shivanya Kirana Store**
+## License
+MIT

@@ -1,0 +1,30 @@
+{
+  "name": "shivanya-kirana-erp-frontend",
+  "version": "1.0.0",
+  "description": "Frontend for Shivanya Kirana ERP System",
+  "private": true,
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.11.0",
+    "axios": "^1.4.0",
+    "antd": "^5.5.0",
+    "@ant-design/icons": "^5.1.0",
+    "zustand": "^4.3.7",
+    "recharts": "^2.7.0",
+    "react-scripts": "5.0.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": ["react-app"]
+  },
+  "browserslist": {
+    "production": ["last 2 versions"],
+    "development": ["last 1 chrome version"]
+  }
+}
